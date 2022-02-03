@@ -54,6 +54,27 @@ public class BlackCarAgent : Agent{
        }
      
 */
+   void OnCollisionStay(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            Debug.Log("sssssssssssssssssssssssssssssssssssssssss" + contact.thisCollider.name + " hit " + contact.otherCollider.name);
+            // Visualize the contact point
+            Debug.DrawRay(contact.point, contact.normal, Color.white);
+        }
+    }
+ void OnCollisionEnter(Collision collision)
+ {
+     Debug.Log("COLLISION");
+     if (collision.collider.GetType() == typeof(BoxCollider2D))
+     {
+         // do stuff only for the box collider
+     }
+     else if (collision.collider.GetType() == typeof(CircleCollider2D))
+     {
+         // do stuff only for the circle collider
+     }
+ }
     //if an objects gets touched
     private void OnTriggerEnter(Collider other){
         GameObject car1 = this.gameObject;
@@ -63,15 +84,19 @@ public class BlackCarAgent : Agent{
         GameObject test1 = this.transform.GetChild(3).gameObject;
 
         //GameObject car1 = this.Collider;
+        Debug.Log("Object: " + this.gameObject);
+        Debug.Log("Object222: " + this);
 
-     
+       // Debug.Log("Object: " + other.gameObject);
+      //  Debug.Log("Object222: " + other);
+
         Debug.Log("Triggered Obj1: :" + car1.name);
         Debug.Log("Triggered obj2: :" + car2.name);
         Debug.Log("Child: :" + test.name);
         Debug.Log("Child222: :" + test1.name);
 
      //   Debug.Log("Triggered Obj1: :" + this.material.name);
-        Debug.Log("Material obj2: :" + other.material.name);
+      //  Debug.Log("Material obj2: :" + other.material.name);
         /*
         if(car1.TryGetComponent<(car2.name == "frontbox")>(out RedCarAgent goalRed)){
             Debug.Log("111111111111111111111111111");
