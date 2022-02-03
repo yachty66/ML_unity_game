@@ -5,6 +5,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
+
 public class BlackCarAgent : Agent{
     //init goal position
     [SerializeField] private Transform targetTransformRed;
@@ -30,19 +31,29 @@ public class BlackCarAgent : Agent{
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
 
-        float moveSpeed = 2f;
+        float moveSpeed = 6f;
         transform.position += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
     }
 
-    /*//just for testing
+    //just for testing
     public override void Heuristic(in ActionBuffers actionsOut){
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         continuousActions[1] = Input.GetAxisRaw("Vertical");
-    }*/
+    }
 
     //if an objects gets touched
     private void OnTriggerEnter(Collider other){
+      
+       
+ 
+        
+
+
+
+
+
+        //Debug.Log(other.GetComponent<Collider>().sharedMaterial.name);
         if (other.TryGetComponent<RedCarAgent>(out RedCarAgent goalRed)){
             SetReward(+1f);
             EndEpisode();
