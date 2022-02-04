@@ -5,9 +5,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
-
 public class BlackCarAgent : Agent{
-    //Rigidbody rb;
     //init goal localPosition
     [SerializeField] private Transform targetTransformRed;
     [SerializeField] private Transform targetTransformYellow;
@@ -31,8 +29,18 @@ public class BlackCarAgent : Agent{
     public override void OnActionReceived(ActionBuffers actions){
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
+int turn = actions.DiscreteActions[0];
+        // Rechtsdrehung
+        if (turn==1){
+            transform.Rotate(0.0f,90.0f,0.0f);
 
-        float moveSpeed = 8f;
+        }
+        // Linksdrehung
+           if (turn==2){
+            transform.Rotate(0.0f,-90.0f,0.0f);
+
+        }
+        float moveSpeed = 3f;
         transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
     }
 
@@ -57,11 +65,11 @@ public class BlackCarAgent : Agent{
         }
         firstTime = currentTime;
         if(other.material.name == "CarBox (Instance)"){
-           // other.attachedRigidbody.AddForce(new Vector3(-10,0,0));
-           other.attachedRigidbody.AddForce(-10,0,0,ForceMode.Impulse);
-                  //  Rigidbody rb;
+        
+           other.attachedRigidbody.AddForce(-5,0,0,ForceMode.Impulse);
+           Debug.Log("CARBOX_BLACK");
 
-            Debug.Log("CARBOX");
+            // other.attachedRigidbody.AddForce(new Vector3(-10,0,0));
            // other.transform.parent.position = other.transform.position + new Vector3(0f,0f,1f);
           //  other.attachedRigidbody.AddForce(-transform.forward);
          // rb.AddForce(1,1,1);
@@ -81,12 +89,15 @@ public class BlackCarAgent : Agent{
 
         if(other.material.name == "Back (Instance)"){
             SetReward(+1f);
-            Debug.Log("Reward Back!");
+   //         Debug.Log("Reward Back!");
            // EndEpisode();
         }
 
         if (other.TryGetComponent<Wall>(out Wall wall)){
             SetReward(-5f);
+            this.attachedRigidbody.AddForce(-20,0,0,ForceMode.Impulse);
+     //      Debug.Log("WALL");
+
          //   EndEpisode();
         }
         /*if (other.TryGetComponent<RedGoal>(out RedGoal goalRed)){

@@ -29,8 +29,18 @@ public class RedCarAgent : Agent{
     public override void OnActionReceived(ActionBuffers actions){
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
+int turn = actions.DiscreteActions[0];
+        // Rechtsdrehung
+        if (turn==1){
+            transform.Rotate(0.0f,90.0f,0.0f);
 
-        float moveSpeed = 2f;
+        }
+        // Linksdrehung
+           if (turn==2){
+            transform.Rotate(0.0f,-90.0f,0.0f);
+
+        }
+        float moveSpeed = 3f;
         transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
     }
 
@@ -46,28 +56,35 @@ public class RedCarAgent : Agent{
     //if an objects gets touched
     private void OnTriggerEnter(Collider other){
         //ich nehme mir die zeit wann jedes collider objekt eintrifft
-        //wenn die zeitabstände extrem klein sind (wie klein?), dann end episode
+        //wenn die zeitabstaende extrem klein sind (wie klein?), dann end episode
         float currentTime = Time.time;
         if(firstTime == currentTime){
             Debug.Log("YES");
-            EndEpisode();
+         //   EndEpisode();
         }
         firstTime = currentTime;
-
+        if(other.material.name == "CarBox (Instance)"){
+        
+           other.attachedRigidbody.AddForce(-5,0,0,ForceMode.Impulse);
+           Debug.Log("CARBOX_RED");
+        }
         if(other.material.name == "Front (Instance)"){
             Debug.Log("No reward Front!");
-            EndEpisode();
+          //  EndEpisode();
         }
 
         if(other.material.name == "Back (Instance)"){
             SetReward(+1f);
             Debug.Log("Reward Back!");
-            EndEpisode();
+         //   EndEpisode();
         }
 
         if (other.TryGetComponent<Wall>(out Wall wall)){
             SetReward(-5f);
-            EndEpisode();
+            other.attachedRigidbody.AddForce(-5,0,0,ForceMode.Impulse);
+           Debug.Log("CARBOX_BLACK");
+
+         //   EndEpisode();
         }
     }
 
