@@ -1,0 +1,73 @@
+{
+    "BlackCar": {
+        "checkpoints": [
+            {
+                "steps": 90249,
+                "file_path": "results/test_4/BlackCar/BlackCar-90249.onnx",
+                "reward": -4.454545454545454,
+                "creation_time": 1643980635.743458,
+                "auxillary_file_paths": [
+                    "results/test_4/BlackCar/BlackCar-90249.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 90249,
+            "file_path": "results/test_4/BlackCar.onnx",
+            "reward": -4.454545454545454,
+            "creation_time": 1643980635.743458,
+            "auxillary_file_paths": [
+                "results/test_4/BlackCar/BlackCar-90249.pt"
+            ]
+        }
+    },
+    "YellowCar": {
+        "checkpoints": [
+            {
+                "steps": 90188,
+                "file_path": "results/test_4/YellowCar/YellowCar-90188.onnx",
+                "reward": -2.9411764705882355,
+                "creation_time": 1643980635.774092,
+                "auxillary_file_paths": [
+                    "results/test_4/YellowCar/YellowCar-90188.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 90188,
+            "file_path": "results/test_4/YellowCar.onnx",
+            "reward": -2.9411764705882355,
+            "creation_time": 1643980635.774092,
+            "auxillary_file_paths": [
+                "results/test_4/YellowCar/YellowCar-90188.pt"
+            ]
+        }
+    },
+    "RedCar": {
+        "checkpoints": [
+            {
+                "steps": 90062,
+                "file_path": "results/test_4/RedCar/RedCar-90062.onnx",
+                "reward": -4.333333333333333,
+                "creation_time": 1643980635.8023832,
+                "auxillary_file_paths": [
+                    "results/test_4/RedCar/RedCar-90062.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 90062,
+            "file_path": "results/test_4/RedCar.onnx",
+            "reward": -4.333333333333333,
+            "creation_time": 1643980635.8023832,
+            "auxillary_file_paths": [
+                "results/test_4/RedCar/RedCar-90062.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.8.0"
+    }
+}

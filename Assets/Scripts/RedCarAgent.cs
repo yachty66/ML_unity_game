@@ -6,23 +6,23 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
 public class RedCarAgent : Agent{
-    //init goal position
+    //init goal localPosition
     [SerializeField] private Transform targetTransformYellow;
     [SerializeField] private Transform targetTransformBlack;
 
-    //position at the beginning
+    //localPosition at the beginning
     public override void OnEpisodeBegin(){
-        transform.position = new Vector3(-10f,0.5f,5f);
+        transform.localPosition = new Vector3(-10f,-0.4f,5f);
     }
 
     //how the agent receives the environment
     public override void CollectObservations(VectorSensor sensor){
-        //agent position
-        sensor.AddObservation(transform.position);
-        //yellow car position
-        sensor.AddObservation(targetTransformYellow.position);
-        //black car position
-        sensor.AddObservation(targetTransformBlack.position);
+        //agent localPosition
+        sensor.AddObservation(transform.localPosition);
+        //yellow car localPosition
+        sensor.AddObservation(targetTransformYellow.localPosition);
+        //black car localPosition
+        sensor.AddObservation(targetTransformBlack.localPosition);
     }
 
     //receives either float or int values
@@ -31,7 +31,7 @@ public class RedCarAgent : Agent{
         float moveZ = actions.ContinuousActions[1];
 
         float moveSpeed = 2f;
-        transform.position += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
+        transform.localPosition += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
     }
 
     /*//just for testing
@@ -41,7 +41,37 @@ public class RedCarAgent : Agent{
         continuousActions[1] = Input.GetAxisRaw("Vertical");
     }*/
 
+    private float firstTime = -1f;
+
     //if an objects gets touched
+    private void OnTriggerEnter(Collider other){
+        //ich nehme mir die zeit wann jedes collider objekt eintrifft
+        //wenn die zeitabstände extrem klein sind (wie klein?), dann end episode
+        float currentTime = Time.time;
+        if(firstTime == currentTime){
+            Debug.Log("YES");
+            EndEpisode();
+        }
+        firstTime = currentTime;
+
+        if(other.material.name == "Front (Instance)"){
+            Debug.Log("No reward Front!");
+            EndEpisode();
+        }
+
+        if(other.material.name == "Back (Instance)"){
+            SetReward(+1f);
+            Debug.Log("Reward Back!");
+            EndEpisode();
+        }
+
+        if (other.TryGetComponent<Wall>(out Wall wall)){
+            SetReward(-5f);
+            EndEpisode();
+        }
+    }
+
+    /*//if an objects gets touched
     private void OnTriggerEnter(Collider other){
         if (other.TryGetComponent<YellowGoal>(out YellowGoal goalYellow)){
             SetReward(+1f);
@@ -55,7 +85,7 @@ public class RedCarAgent : Agent{
             SetReward(-1f);
             EndEpisode();
         }
-    }
+    }*/
 
 }
 
