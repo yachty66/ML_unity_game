@@ -31,7 +31,7 @@ public class BlackCarAgent : Agent{
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
 
-        float moveSpeed = 6f;
+        float moveSpeed = 11f;
         transform.position += new Vector3(moveX, 0, moveZ) * Time.deltaTime * moveSpeed;
     }
 
@@ -45,20 +45,12 @@ public class BlackCarAgent : Agent{
     //if an objects gets touched
     private void OnTriggerEnter(Collider other){
       
-       
- 
-        
-
-
-
-
-
         //Debug.Log(other.GetComponent<Collider>().sharedMaterial.name);
-        if (other.TryGetComponent<RedCarAgent>(out RedCarAgent goalRed)){
+        if (other.TryGetComponent<RedGoal>(out RedGoal goalRed)){
             SetReward(+1f);
             EndEpisode();
         }
-        if (other.TryGetComponent<YellowCarAgent>(out YellowCarAgent goalYellow)){
+        if (other.TryGetComponent<YellowGoal>(out YellowGoal goalYellow)){
             SetReward(+1f);
             EndEpisode();
         }

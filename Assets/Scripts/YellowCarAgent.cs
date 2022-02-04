@@ -43,11 +43,38 @@ public class YellowCarAgent : Agent{
 
     //if an objects gets touched
     private void OnTriggerEnter(Collider other){
-        if (other.TryGetComponent<RedCarAgent>(out RedCarAgent goalRed)){
+        
+         // Declare and initialize a new List of GameObjects called currentCollisions.
+     List <GameObject> currentCollisions = new List <GameObject> ();
+     
+     void OnCollisionEnter (Collision col) {
+ 
+         // Add the GameObject collided with to the list.
+         currentCollisions.Add (col.gameObject);
+ 
+         // Print the entire list to the console.
+         foreach (GameObject gObject in currentCollisions) {
+             print (gObject.name);
+         }
+     }
+ 
+     void OnCollisionExit (Collision col) {
+ 
+         // Remove the GameObject collided with from the list.
+         currentCollisions.Remove (col.gameObject);
+ 
+         // Print the entire list to the console.
+         foreach (GameObject gObject in currentCollisions) {
+             print (gObject.name);
+         }
+     }
+
+        Debug.Log(other.GetComponent<Collider>().sharedMaterial.name);
+        if (other.TryGetComponent<RedGoal>(out RedGoal goalRed)){
             SetReward(+1f);
             EndEpisode();
         }
-        if (other.TryGetComponent<BlackCarAgent>(out BlackCarAgent goalBlack)){
+        if (other.TryGetComponent<BlackGoal>(out BlackGoal goalBlack)){
             SetReward(+1f);
             EndEpisode();
         }
