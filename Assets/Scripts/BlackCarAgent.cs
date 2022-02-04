@@ -95,7 +95,7 @@ int turn = actions.DiscreteActions[0];
 
         if (other.TryGetComponent<Wall>(out Wall wall)){
             SetReward(-5f);
-            this.attachedRigidbody.AddForce(-20,0,0,ForceMode.Impulse);
+      //      this.attachedRigidbody.AddForce(-20,0,0,ForceMode.Impulse);
      //      Debug.Log("WALL");
 
          //   EndEpisode();
