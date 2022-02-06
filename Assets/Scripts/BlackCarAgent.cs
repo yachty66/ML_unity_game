@@ -14,6 +14,7 @@ public class BlackCarAgent : Agent{
         //transform.localPosition = Vector3.one;
      //   transform.localPosition = new Vector3(-6f,-0.4f,-8f);
         transform.localPosition = new Vector3(Random.Range(-10.0f,10.0f),0,Random.Range(-10.0f,10.0f));
+        transform.rotation = Quaternion.identity;
 
     }
 

@@ -14,6 +14,7 @@ public class YellowCarAgent : Agent{
         //transform.position = Vector3.one;
        // transform.localPosition = new Vector3(8f,-0.4f,3f);
         transform.localPosition = new Vector3(Random.Range(-10.0f,10.0f),0,Random.Range(-10.0f,10.0f));
+        transform.rotation = Quaternion.identity;
 
     }
 

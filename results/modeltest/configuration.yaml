@@ -24,7 +24,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 1.0
+        strength: 0.5
         network_settings:
           normalize: false
           hidden_units: 128
@@ -34,11 +34,11 @@ behaviors:
           goal_conditioning_type: hyper
           deterministic: false
       gail:
-        strength: 0.0
-        demo_path: Demos/dBlack1.demo
+        strength: 0.5
+        demo_path: Project/Demos/dBlack1.demo
     behavioral_cloning:
-      strength: 1.0
-      demo_path: Demos/dBlack1.demo
+      strength: 0.5
+      demo_path: Project/Demos/dBlack1.demo
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
@@ -72,7 +72,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 1.0
+        strength: 0.5
         network_settings:
           normalize: false
           hidden_units: 128
@@ -82,11 +82,11 @@ behaviors:
           goal_conditioning_type: hyper
           deterministic: false
       gail:
-        strength: 0.0
-        demo_path: Demos/dBlack1.demo
+        strength: 0.5
+        demo_path: Project/Demos/dBlack1.demo
     behavioral_cloning:
-      strength: 1.0
-      demo_path: Demos/dBlack1.demo
+      strength: 0.5
+      demo_path: Project/Demos/dBlack1.demo
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
@@ -120,7 +120,7 @@ behaviors:
     reward_signals:
       extrinsic:
         gamma: 0.99
-        strength: 1.0
+        strength: 0.5
         network_settings:
           normalize: false
           hidden_units: 128
@@ -130,11 +130,11 @@ behaviors:
           goal_conditioning_type: hyper
           deterministic: false
       gail:
-        strength: 0.0
-        demo_path: Demos/dBlack1.demo
+        strength: 0.5
+        demo_path: Project/Demos/dBlack1.demo
     behavioral_cloning:
-      strength: 1.0
-      demo_path: Demos/dBlack1.demo
+      strength: 0.5
+      demo_path: Project/Demos/dBlack1.demo
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
