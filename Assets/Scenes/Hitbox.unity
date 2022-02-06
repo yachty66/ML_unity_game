@@ -469,6 +469,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8982509738433481340, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8982509738472337510, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
       propertyPath: m_Enabled
@@ -484,6 +489,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509738978635352, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509738978635352, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8982509739437210563, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
@@ -502,6 +517,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
+      propertyPath: m_InferenceDevice
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -514,6 +534,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509739947368435, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8982509739947368444, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
@@ -542,6 +567,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8982509740133753135, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8982509740186255329, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
       propertyPath: m_UseGravity
@@ -551,6 +581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_InferenceDevice
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
@@ -581,6 +616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_InferenceDevice
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}

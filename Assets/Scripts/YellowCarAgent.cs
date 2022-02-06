@@ -12,7 +12,9 @@ public class YellowCarAgent : Agent{
 
     public override void OnEpisodeBegin(){
         //transform.position = Vector3.one;
-        transform.localPosition = new Vector3(8f,-0.4f,3f);
+       // transform.localPosition = new Vector3(8f,-0.4f,3f);
+        transform.localPosition = new Vector3(Random.Range(-10.0f,10.0f),0,Random.Range(-10.0f,10.0f));
+
     }
 
     //how the agent receives the environment
@@ -29,14 +31,16 @@ public class YellowCarAgent : Agent{
     public override void OnActionReceived(ActionBuffers actions){
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
-int turn = actions.DiscreteActions[0];
+        float turn = actions.ContinuousActions[2];
+
+//int turn = actions.DiscreteActions[0];
         // Rechtsdrehung
-        if (turn==1){
+        if (turn > 0.9f){
             transform.Rotate(0.0f,90.0f,0.0f);
 
         }
         // Linksdrehung
-           if (turn==2){
+           if (turn < -0.9){
             transform.Rotate(0.0f,-90.0f,0.0f);
 
         }
@@ -59,32 +63,37 @@ int turn = actions.DiscreteActions[0];
         //wenn die zeitabstaende extrem klein sind (wie klein?), dann end episode
         float currentTime = Time.time;
         if(firstTime == currentTime){
-            Debug.Log("YES");
+      //      Debug.Log("YES");
             EndEpisode();
         }
         firstTime = currentTime;
         if(other.material.name == "CarBox (Instance)"){
         
            other.attachedRigidbody.AddForce(-5,0,0,ForceMode.Impulse);
-           Debug.Log("CARBOX_YELLOW");
+     //      Debug.Log("CARBOX_YELLOW");
         }
         if(other.material.name == "Front (Instance)"){
-            Debug.Log("No reward Front!");
+      //      Debug.Log("No reward Front!");
       //       EndEpisode();
         }
 
         if(other.material.name == "Back (Instance)"){
-            SetReward(+1f);
-            Debug.Log("Reward Back!");
+            SetReward(+20f);
+      //      Debug.Log("Reward Back!");
      //       EndEpisode();
         }
-
+        /*
+        // Position des getroffenen Autos veraendern
+        if(this.GetChild().material.name == "Back (Instance)"){
+            EndEpisode();
+        }
+        */
         if (other.TryGetComponent<Wall>(out Wall wall)){
             SetReward(-5f);
-            other.attachedRigidbody.AddForce(-5,0,0,ForceMode.Impulse);
+          //  other.attachedRigidbody.AddForce(-5,0,0,ForceMode.Impulse);
        //    Debug.Log("CARBOX_BLACK");
 
-          //  EndEpisode();
+            EndEpisode();
         }
     }
 
