@@ -1,0 +1,73 @@
+{
+    "BlackCar": {
+        "checkpoints": [
+            {
+                "steps": 252480,
+                "file_path": "results/imitationfinal/BlackCar/BlackCar-252480.onnx",
+                "reward": 2.2289156626506026,
+                "creation_time": 1644160221.3181455,
+                "auxillary_file_paths": [
+                    "results/imitationfinal/BlackCar/BlackCar-252480.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 252480,
+            "file_path": "results/imitationfinal/BlackCar.onnx",
+            "reward": 2.2289156626506026,
+            "creation_time": 1644160221.3181455,
+            "auxillary_file_paths": [
+                "results/imitationfinal/BlackCar/BlackCar-252480.pt"
+            ]
+        }
+    },
+    "YellowCar": {
+        "checkpoints": [
+            {
+                "steps": 252600,
+                "file_path": "results/imitationfinal/YellowCar/YellowCar-252600.onnx",
+                "reward": -0.7291666666666666,
+                "creation_time": 1644160221.3893034,
+                "auxillary_file_paths": [
+                    "results/imitationfinal/YellowCar/YellowCar-252600.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 252600,
+            "file_path": "results/imitationfinal/YellowCar.onnx",
+            "reward": -0.7291666666666666,
+            "creation_time": 1644160221.3893034,
+            "auxillary_file_paths": [
+                "results/imitationfinal/YellowCar/YellowCar-252600.pt"
+            ]
+        }
+    },
+    "RedCar": {
+        "checkpoints": [
+            {
+                "steps": 252518,
+                "file_path": "results/imitationfinal/RedCar/RedCar-252518.onnx",
+                "reward": 9.666666666666666,
+                "creation_time": 1644160221.4660158,
+                "auxillary_file_paths": [
+                    "results/imitationfinal/RedCar/RedCar-252518.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 252518,
+            "file_path": "results/imitationfinal/RedCar.onnx",
+            "reward": 9.666666666666666,
+            "creation_time": 1644160221.4660158,
+            "auxillary_file_paths": [
+                "results/imitationfinal/RedCar/RedCar-252518.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.8.2+cpu"
+    }
+}

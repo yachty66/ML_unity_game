@@ -1,0 +1,73 @@
+{
+    "RedCar": {
+        "checkpoints": [
+            {
+                "steps": 24884,
+                "file_path": "results/imitTest/RedCar/RedCar-24884.onnx",
+                "reward": 20.714285714285715,
+                "creation_time": 1644162648.7106433,
+                "auxillary_file_paths": [
+                    "results/imitTest/RedCar/RedCar-24884.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24884,
+            "file_path": "results/imitTest/RedCar.onnx",
+            "reward": 20.714285714285715,
+            "creation_time": 1644162648.7106433,
+            "auxillary_file_paths": [
+                "results/imitTest/RedCar/RedCar-24884.pt"
+            ]
+        }
+    },
+    "YellowCar": {
+        "checkpoints": [
+            {
+                "steps": 24711,
+                "file_path": "results/imitTest/YellowCar/YellowCar-24711.onnx",
+                "reward": 5.588235294117647,
+                "creation_time": 1644162648.772451,
+                "auxillary_file_paths": [
+                    "results/imitTest/YellowCar/YellowCar-24711.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24711,
+            "file_path": "results/imitTest/YellowCar.onnx",
+            "reward": 5.588235294117647,
+            "creation_time": 1644162648.772451,
+            "auxillary_file_paths": [
+                "results/imitTest/YellowCar/YellowCar-24711.pt"
+            ]
+        }
+    },
+    "BlackCar": {
+        "checkpoints": [
+            {
+                "steps": 24769,
+                "file_path": "results/imitTest/BlackCar/BlackCar-24769.onnx",
+                "reward": 1.4814814814814814,
+                "creation_time": 1644162648.8365195,
+                "auxillary_file_paths": [
+                    "results/imitTest/BlackCar/BlackCar-24769.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 24769,
+            "file_path": "results/imitTest/BlackCar.onnx",
+            "reward": 1.4814814814814814,
+            "creation_time": 1644162648.8365195,
+            "auxillary_file_paths": [
+                "results/imitTest/BlackCar/BlackCar-24769.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.8.2+cpu"
+    }
+}
