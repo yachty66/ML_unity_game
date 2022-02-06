@@ -370,7 +370,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466482199}
   m_Material: {fileID: 13400000, guid: 84713bf9f2f117c809fa9b5c3ecc884b, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8, y: 1, z: 2.8}
@@ -391,6 +391,22 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+--- !u!114 &1466482207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466482199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 0
+  NumStepsToRecord: 0
+  DemonstrationName: demotest
+  DemonstrationDirectory: Demos
 --- !u!1001 &8982509738511637930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -517,18 +533,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
       propertyPath: m_InferenceDevice
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
       propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509739728667434, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
@@ -584,18 +615,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
       propertyPath: m_InferenceDevice
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
       propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740186255331, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
@@ -619,18 +670,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
       propertyPath: m_InferenceDevice
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
       propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8982509740373088951, guid: abff886d524b64b79a0d09edd1cc30ad,
         type: 3}
@@ -664,7 +730,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8982509738511637931}
   m_Material: {fileID: 13400000, guid: 84713bf9f2f117c809fa9b5c3ecc884b, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8, y: 1, z: 2.8}
@@ -677,7 +743,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8982509738511637932}
   m_Material: {fileID: 13400000, guid: 84713bf9f2f117c809fa9b5c3ecc884b, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8, y: 1, z: 2.8}
@@ -714,3 +780,35 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+--- !u!114 &8982509738511637947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982509738511637931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 0
+  NumStepsToRecord: 0
+  DemonstrationName: 
+  DemonstrationDirectory: 
+--- !u!114 &8982509738511637948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982509738511637932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 0
+  NumStepsToRecord: 0
+  DemonstrationName: dBlack1
+  DemonstrationDirectory: Demos
